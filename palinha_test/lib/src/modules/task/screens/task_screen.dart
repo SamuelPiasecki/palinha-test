@@ -46,7 +46,7 @@ class _TaskScreenState extends State<TaskScreen> {
             } else {
               return ListView.separated(
                 separatorBuilder: (context, index) => const SizedBox(
-                  height: 8,
+                  height: 4,
                 ),
                 itemCount: store.state.value.length,
                 itemBuilder: (_, index) {
@@ -54,7 +54,7 @@ class _TaskScreenState extends State<TaskScreen> {
                   return Column(
                     children: [
                       Container(
-                        margin: EdgeInsets.all(8),
+                        margin: EdgeInsets.all(6),
                         decoration: BoxDecoration(
                             color: Color(0xFFEEEEEE),
                             borderRadius: BorderRadius.circular(10),
