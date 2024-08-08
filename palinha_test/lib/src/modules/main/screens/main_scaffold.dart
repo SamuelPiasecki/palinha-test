@@ -33,9 +33,9 @@ class _MainScaffoldState extends State<MainScaffold> {
       appBar: AppBar(
         title: Text(
           title,
-          style: TextStyle(color: Color(0xFFF3F7EC)),
+          style: TextStyle(color: Color(0xFFEEEEEE)),
         ),
-        backgroundColor: Color(0xFF005C78),
+        backgroundColor: Color(0xFF201E43),
       ),
       backgroundColor: Color(0xFFF3F7EC),
       body: IndexedStack(

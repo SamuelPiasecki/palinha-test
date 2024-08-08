@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:palinha_test/src/modules/home/data/http/exceptions.dart';
+import 'package:palinha_test/src/modules/main/data/http/exceptions.dart';
 import 'package:palinha_test/src/modules/home/data/models/user_model.dart';
 import 'package:palinha_test/src/modules/home/data/repositories/user_repository.dart';
 

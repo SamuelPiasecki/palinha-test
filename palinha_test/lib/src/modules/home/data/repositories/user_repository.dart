@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:palinha_test/src/modules/home/data/http/exceptions.dart';
-import 'package:palinha_test/src/modules/home/data/http/http_client.dart';
+import 'package:palinha_test/src/modules/main/data/http/exceptions.dart';
+import 'package:palinha_test/src/modules/main/data/http/http_client.dart';
 import 'package:palinha_test/src/modules/home/data/models/user_model.dart';
 
 abstract class IUserRepository {
@@ -32,7 +32,7 @@ class UserRepository implements IUserRepository {
     } else if (response.statusCode == 404) {
       throw NotFoundException("A url informada não é válida");
     } else {
-      throw Exception("Não foi possível carregar os produtos");
+      throw Exception("Não foi possível carregar os usuários");
     }
   }
 }
