@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:palinha_test/src/modules/home/data/http/http_client.dart';
+import 'package:palinha_test/src/modules/main/data/http/http_client.dart';
 import 'package:palinha_test/src/modules/home/data/repositories/user_repository.dart';
 import 'package:palinha_test/src/modules/home/store/user_store.dart';
 
@@ -18,12 +18,12 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     store.getUsers();
-    print(store);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color(0xFF508C9B),
         body: AnimatedBuilder(
             animation:
                 Listenable.merge([store.isLoading, store.error, store.state]),
@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
               if (store.isLoading.value) {
                 return Center(
                   child: CircularProgressIndicator(
-                    color: Color(0xFF005C78),
+                    color: Color(0xFF134B70),
                   ),
                 );
               }
@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Container(
                             padding: EdgeInsets.all(6),
                             decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: Color(0xFFEEEEEE),
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.black.withOpacity(0.2),
