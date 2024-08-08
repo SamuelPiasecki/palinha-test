@@ -24,7 +24,7 @@ class _MainScaffoldState extends State<MainScaffold> {
       _currentIndex = index;
       title = index == 0 ? "Home" : "Tarefas";
     });
-    Modular.to.navigate(index == 0 ? '/home' : '/tasks');
+    Modular.to.navigate(index == 0 ? '/main/home' : '/main/tasks');
   }
 
   @override
