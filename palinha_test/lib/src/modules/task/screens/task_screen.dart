@@ -21,11 +21,6 @@ class _TaskScreenState extends State<TaskScreen> {
     store.getTasks();
   }
 
-  void _reloadTasks() async {
-    await Future.delayed(Duration(seconds: 5));
-    await store.getTasks();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -44,7 +39,6 @@ class _TaskScreenState extends State<TaskScreen> {
                 );
               }
               if (store.error.value.isNotEmpty) {
-                _reloadTasks();
                 return Center(child: Text(store.error.value));
               }
               if (store.state.value.isEmpty) {
