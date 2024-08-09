@@ -10,3 +10,5 @@ Para esse projeto foram usadas as seguinte dependências:
 - http: ^1.2.2
 - intl: ^0.19.0
 - flutter_launcher_icons: ^0.13.1
+  
+APK do aplicativo: [app-teste.zip](https://github.com/user-attachments/files/16565201/app-teste.zip)
