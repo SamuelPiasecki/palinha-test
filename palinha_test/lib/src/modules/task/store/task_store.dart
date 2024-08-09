@@ -36,8 +36,9 @@ class TaskStore {
 
   Future deleteTask(String? id) async {
     try {
-      await repository.deleteTask(id!);
-      await getTasks();
+      if (id != null) {
+        await repository.deleteTask(id);
+      }
     } catch (e) {
       error.value = e.toString();
     }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:palinha_test/src/modules/task/data/models/task_model.dart';
+import 'package:palinha_test/src/modules/task/utils/utils.dart';
 
 Future<Task> showTaskModal(BuildContext context) {
   final _formKey = GlobalKey<FormState>();
@@ -8,20 +9,6 @@ Future<Task> showTaskModal(BuildContext context) {
   final TextEditingController _descriptionController = TextEditingController();
   DateTime? _selectedDate;
   String? _selectedOption;
-
-  String translateOption(String option) {
-    switch (option) {
-      case "Baixa":
-        return "low";
-      case "Média":
-        return "medium";
-      case "Alta":
-        return "high";
-      case "Urgente":
-        return "urgent";
-    }
-    return "";
-  }
 
   return showDialog<Task>(
     context: context,
@@ -116,7 +103,9 @@ Future<Task> showTaskModal(BuildContext context) {
                   title: _titleController.text,
                   description: _descriptionController.text,
                   priority: translateOption(_selectedOption!),
-                  dueDate: DateFormat('dd/MM/yyyy').format(_selectedDate!),
+                  dueDate: _selectedDate != null
+                      ? DateFormat('dd/MM/yyyy').format(_selectedDate!)
+                      : "",
                 );
 
                 Navigator.of(context).pop(task);

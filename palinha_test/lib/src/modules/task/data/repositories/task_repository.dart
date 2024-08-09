@@ -4,6 +4,7 @@ import 'dart:typed_data';
 import 'package:palinha_test/src/modules/main/data/http/exceptions.dart';
 import 'package:palinha_test/src/modules/main/data/http/http_client.dart';
 import 'package:palinha_test/src/modules/task/data/models/task_model.dart';
+import 'package:palinha_test/src/modules/task/utils/utils.dart';
 
 abstract class ITaskRepository {
   Future<List<Task>> getTasks();
@@ -19,20 +20,6 @@ class TaskRepository implements ITaskRepository {
   String fixEncoding(String text) {
     final bytes = Uint8List.fromList(text.codeUnits);
     return utf8.decode(bytes, allowMalformed: true);
-  }
-
-  String translatePriority(String priority) {
-    switch (priority) {
-      case "low":
-        return "Baixa";
-      case "medium":
-        return "Média";
-      case "high":
-        return "Alta";
-      case "urgent":
-        return "Urgente";
-    }
-    return "";
   }
 
   @override

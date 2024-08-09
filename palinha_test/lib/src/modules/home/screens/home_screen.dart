@@ -22,9 +22,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Color(0xFF508C9B),
-        body: AnimatedBuilder(
+    return Container(
+        decoration: BoxDecoration(
+          color: Color(0xFF508C9B),
+        ),
+        child: AnimatedBuilder(
             animation:
                 Listenable.merge([store.isLoading, store.error, store.state]),
             builder: (context, child) {
